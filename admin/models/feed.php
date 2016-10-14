@@ -23,6 +23,7 @@ class InstagalleryModelFeed extends JModelItem
     public function getImages(){
         $params = JComponentHelper::getParams('com_instagallery');
         $accessToken = $params->get('access_token');
+        JError::raiseNotice(0, "Access-token:".$accessToken);
         if($accessToken != ''){
             $InstaMedia = new InstaUsers($accessToken);
             $userFeed = $InstaMedia->getSelfFeed(50);

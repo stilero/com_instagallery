@@ -10,15 +10,7 @@
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
 ?>
-<h2>Getting started</h2>
+<h2>Congratulations</h2>
 <p>
-<ol>
-    <li>Open the options dialog, and enter Instagram Client ID and Client Secret. If you don't have any Instagram Client, click the Create Instagram App in the Options Dialog.</li>
-    <li>Click the Authorize app button below, to log in to Instagram</li>
-</ol>
-</p>
-<p>
-    <a class="modals" href="index.php?option=com_instagallery&amp;view=auth&amp;format=raw&amp;<?php echo JSession::getFormToken(); ?>=1" rel="{handler: 'iframe', size: {x: 875, y: 600}, onClose: function() {}}">
-        <button>Authorize app</button>
-    </a> 
+    You are now connected to Instagram
 </p>
