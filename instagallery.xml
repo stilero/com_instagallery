@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.2" type="component" method="upgrade">
+	<name>InstaGallery</name>
+	<author>Daniel Eliasson</author>
+	<creationDate>2016-okt-14</creationDate>
+	<copyright>Copyright (c) 2016-okt-14 Stilero Webdesign http://www.stilero.com. All rights reserved.</copyright>
+	<authorEmail>joomla@stilero.com</authorEmail>
+	<authorUrl>www.stilero.com</authorUrl>
+	<version>1.0</version>
+	<license>GPLv2</license>
+	<description>Description</description>
+     
+	<!-- Standard plugin parameters for Joomla! 1.6+ -->
+        <config>
+            <fields name="params" addfieldpath="/plugins/content/instagallery/elements">
+                    <fieldset name="settings" label="COM_INSTAGALLERY_SETTINGS">
+                            <field name="custom_field" type="customfieldname" default="" label="COM_INSTAGALLERY_PARAMNAME" description="COM_INSTAGALLERY_PARAMNAME_DESC"/>
+                            <field name="param_name" type="text"  default="" label="COM_INSTAGALLERY_PARAMNAME" description="COM_INSTAGALLERY_PARAMNAME_DESC"/>
+                            <field name="param_name2" type="radio" default="1" label="COM_INSTAGALLERY_PARAMNAME2" description="COM_INSTAGALLERY_PARAMNAME2_DESC">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                            </field>
+                            <field type="spacer" default="COM_INSTAGALLERY_SPACER"/>
+                    </fieldset>
+                    <fieldset name="other" label="COM_INSTAGALLERY_FIELDSET">
+                            <field name="param_name" type="text"  default="" label="COM_INSTAGALLERY_PARAMNAME" description="COM_INSTAGALLERY_PARAMNAME_DESC"/>
+                            <field name="param_name2" type="radio" default="1" label="COM_INSTAGALLERY_PARAMNAME2" description="COM_INSTAGALLERY_PARAMNAME2_DESC">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                            </field>
+                            <field type="spacer" default="COM_INSTAGALLERY_SPACER"/>
+                    </fieldset>
+            </fields>
+        </config>
+	<administration>
+            <!-- Administration Menu Section -->
+           <menu img="../administrator/components/com_instagallery/assets/images/instagallery.png" link="index.php?option=com_instagallery">instagallery</menu>
+            <files folder="admin">
+                    <!-- Admin Main File Copy Section -->
+                    <filename>index.html</filename>
+                    <filename>config.xml</filename>
+                    <filename>instagallery.php</filename>
+                    <filename>controller.php</filename>
+                    <folder>views</folder>
+                    <folder>models</folder>
+                    <folder>controllers</folder>
+                    <folder>includes</folder>
+                    <folder>assets</folder>
+                    <folder>helpers</folder>
+                    <folder>sql</folder>
+            </files>
+            <languages>
+	       <language tag="en-GB">admin/language/en-GB.com_instagallery.ini</language>
+               <language tag="en-GB">admin/language/en-GB.com_instagallery.sys.ini</language>
+	    </languages>
+	</administration>
+</extension>
