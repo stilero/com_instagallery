@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="module" method="upgrade" client="site">
+	<name>InstaGallery</name>
+	<author>Daniel Eliasson (joomla@stilero.com)</author>
+	<creationDate>2013-okt-01</creationDate>
+	<copyright>Copyright (c) 2012-nov-08 Stilero Webdesign (www.stilero.com). All rights reserved.</copyright>
+	<authorEmail>joomla@stilero.com</authorEmail>
+	<authorUrl>www.stilero.com</authorUrl>
+	<version>2.0</version>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>InstaGallery shows your Instagram images in a module</description>
+	<files>
+            <filename module="mod_instagallery">mod_instagallery.php</filename>
+            <folder>tmpl</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>includes</folder>
+            <filename>index.html</filename>
+            <filename>mod_instagallery.xml</filename>
+            <filename>instaClass.php</filename>
+            <filename>helper.php</filename>
+        </files>
+	<languages folder="language">
+            <language tag="en-GB">en-GB.mod_instagallery.ini</language>
+            <language tag="en-GB">en-GB.mod_instagallery.sys.ini</language>
+        </languages>
+	<config>
+            <fields name="params" >
+                <fieldset name="basic" label="MOD_INSTAGALLERY_SETTINGS"  addfieldpath="/modules/mod_instagallery/assets/elements">
+                    <field 
+                    name="connecteduser" 
+                    type="connecteduser" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_AUTHUSER_NAME" 
+                    description="MOD_INSTAGALLERY_USER_ID_DESC"/>
+                    <!--
+                    Define More display types in the helper-class
+                    modInstaGalleryMediaTypeHelper
+                    -->
+                    <field 
+                        name="display_type" 
+                        type="mediatypes" 
+                        label="MOD_INSTAGALLERY_TYPE" 
+                        description="MOD_INSTAGALLERY_TYPE_DESC"
+                    />
+                    <!--
+                    <field 
+                        type="spacer" 
+                        name="userspacer" 
+                        class="text"
+                        label="MOD_INSTAGALLERY_USER_SPACER"/>
+                    
+                <field 
+                    name="instauser" 
+                    type="instauser" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_USER_NAME" 
+                    description="MOD_INSTAGALLERY_USER_NAME_DESC"/>
+                    
+                <field 
+                    name="user_name" 
+                    type="text" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_USER_NAME" 
+                    description="MOD_INSTAGALLERY_USER_NAME_DESC"/>
+                    
+                <field 
+                    type="spacer" 
+                    name="tagsspacer" 
+                    class="text"
+                    label="MOD_INSTAGALLERY_TAGS_NAME_SPACER"/>
+                <field 
+                    name="tags_name" 
+                    type="text" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_TAGS_NAME" 
+                    description="MOD_INSTAGALLERY_TAGS_NAME_DESC"/>
+                <field 
+                    type="spacer" 
+                    name="locationspacer" 
+                    class="text"
+                    label="MOD_INSTAGALLERY_LOCATION_SPACER"/>
+                <field 
+                    name="longitude" 
+                    type="text" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_LONGITUDE" 
+                    description="MOD_INSTAGALLERY_LONGITUDE_DESC"/>
+                <field 
+                    name="latitude" 
+                    type="text" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_LATITUDE" 
+                    description="MOD_INSTAGALLERY_LATITUDE_DESC"/>
+                <field 
+                    name="distance" 
+                    type="text" 
+                    default="1000" 
+                    label="MOD_INSTAGALLERY_DISTANCE" 
+                    description="MOD_INSTAGALLERY_DISTANCE_DESC"/>
+                    -->
+                <field 
+                    type="spacer" 
+                    name="generalspacer" 
+                    class="text"
+                    label="MOD_INSTAGALLERY_GENERAL_SPACER"/>
+                <field 
+                    name="image_count" 
+                    type="text" 
+                    default="30" 
+                    label="MOD_INSTAGALLERY_IMAGE_COUNT" 
+                    description="MOD_INSTAGALLERY_IMAGE_COUNT_DESC"/>
+                <field
+                    name="likes-comments"
+                    type="list"
+                    default="1"
+                    label="MOD_INSTAGALLERY_LIKES_COMMENTS"
+                    description="MOD_INSTAGALLERY_LIKES_COMMENTS_DESC">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                </field>
+                <field
+                    name="show-caption"
+                    type="list"
+                    default="1"
+                    label="MOD_INSTAGALLERY_SHOW_CAPTION"
+                    description="MOD_INSTAGALLERY_SHOW_CAPTION_DESC">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                </field>
+                <field
+                    name="link_type"
+                    type="list"
+                    default="0"
+                    label="MOD_INSTAGALLERY_LINKTYPE"
+                    description="MOD_INSTAGALLERY_LINKTYPE_DESC">
+                        <option value="0">MOD_INSTAGALLERY_LINKTYPE_LIGHTBOX</option>
+                        <option value="1">MOD_INSTAGALLERY_LINKTYPE_INSTAGRAM</option>
+                </field>
+                <field 
+                    name="image_thumb_size" 
+                    type="text" 
+                    default="150" 
+                    label="MOD_INSTAGALLERY_IMAGE_THUMB_SIZE" 
+                    description="MOD_INSTAGALLERY_IMAGE_THUMB_SIZE_DESC"/>
+                <!--
+                <field 
+                    name="gallery_type" 
+                    type="list" default="default" 
+                    label="MOD_INSTAGALLERY_GALLERY_TYPE" 
+                    description="MOD_INSTAGALLERY_GALLERY_TYPE_DESC">
+                        <option value="default">MOD_INSTAGALLERY_GALLERY_TYPE_DEFAULT</option>
+                        <option value="widgetkit">MOD_INSTAGALLERY_GALLERY_TYPE_WIDGETKIT</option>
+                </field>
+                -->
+                <field
+                    name="gallery_type" 
+                    type="gallerytypes" 
+                    default="default" 
+                    label="MOD_INSTAGALLERY_GALLERY_TYPE" 
+                    description="MOD_INSTAGALLERY_GALLERY_TYPE_DESC"
+                />
+                    
+                 <field 
+                     name="pre_text"
+                    type="textarea" 
+                    label="MOD_INSTAGALLERY_PRE_TEXT"
+                    description="MOD_INSTAGALLERY_PRE_TEXT_DESC"
+                    default="" 
+                    rows="6" 
+                    cols="30" 
+                    filter="raw"/>
+                <field 
+                    name="post_text"
+                    type="textarea" 
+                    label="MOD_INSTAGALLERY_POST_TEXT"
+                    description="MOD_INSTAGALLERY_POST_TEXT_DESC"
+                    default="" 
+                    rows="6" 
+                    cols="30" 
+                    filter="raw"/>
+            </fieldset>
+            <!--
+            <fieldset name="instagram_settings" label="MOD_INSTAGALLERY_SETTINGS" addfieldpath="/modules/mod_instagallery/assets/elements">
+                <field 
+                    name="redirect_uri" 
+                    type="redirecturi" 
+                    default="" 
+                />
+                <field 
+                    name="instructions_code" 
+                    type="instructions" 
+                    label="instructions"
+                />
+                <field 
+                    name="client_id" 
+                    type="text" default="" 
+                    label="MOD_INSTAGALLERY_CLIENT_ID" 
+                    description="MOD_INSTAGALLERY_CLIENT_ID_DESC" 
+                />
+                <field 
+                    name="client_secret" 
+                    type="text" default="" 
+                    label="MOD_INSTAGALLERY_CLIENT_SECRET" 
+                    description="MOD_INSTAGALLERY_CLIENT_SECRET_DESC" 
+                />
+                <field 
+                    name="authorize" 
+                    type="authorize" 
+                    default="" 
+                    label="" 
+                    description="" 
+                />
+                <field 
+                    name="auth_code" 
+                    type="password" 
+                    default="" 
+                />
+                <field 
+                    name="access_token" 
+                    type="password" 
+                    default="" 
+                />
+                <field 
+                    name="auth_user_id" 
+                    type="hidden" 
+                    default="" 
+                />
+                <field 
+                    name="base_uri" 
+                    type="baseuri" 
+                    default="" 
+                />
+                <field 
+                    name="helpers_uri" 
+                    type="helpersuri" 
+                />
+                <field 
+                    name="authuser_name" 
+                    type="text" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_AUTHUSER_NAME" 
+                    description="MOD_INSTAGALLERY_USER_ID_DESC"/>
+                <field 
+                    name="authuser_id" 
+                    type="hidden" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_AUTHUSER_ID" 
+                    description="MOD_INSTAGALLERY_AUTHUSER_ID_DESC"/>
+                <field 
+                    name="authuser_profile" 
+                    type="userprofile" 
+                    default="" 
+                    label="MOD_INSTAGALLERY_AUTHUSER_PROFILE" 
+                    description="MOD_INSTAGALLERY_AUTHUSER_PROFILE_DESC"/>
+                <field 
+                    name="authuser_profile_url" 
+                    type="hidden" 
+                    default="" 
+                    />
+            </fieldset>
+            -->
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" 
+                />
+                <field
+                    name="moduleclass_sfx"
+                    type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" 
+                />
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                        value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" 
+                />
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="itemid">
+                    <option
+                        value="itemid">
+                    </option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>	
+</extension>

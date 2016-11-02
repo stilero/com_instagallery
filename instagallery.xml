@@ -54,4 +54,8 @@
                <language tag="en-GB">admin/language/en-GB.com_instagallery.sys.ini</language>
 	    </languages>
 	</administration>
+        <scriptfile>install.php</scriptfile>
+        <chain>
+		<extension directory="modules" name="mod_instagallery" type="module" />
+        </chain>
 </extension>
