@@ -39,7 +39,7 @@
         />
         <field 
             name="access_token" 
-            type="text" 
+            type="hidden" 
             default="" 
             label="Auth Token"
             size="50"
